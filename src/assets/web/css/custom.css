@@ -1,0 +1,125 @@
+.jumbotron-header {
+    background-color: #BD562D;
+}
+
+.header-logo {
+    margin-top: 18px;
+    padding-right: 5px;
+    float: left;
+}
+
+.header-text {
+    color: #fffcf2;
+}
+
+.header-school {
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.navbar-top {
+    background-color: #252422;
+    color: #fffcf2;
+}
+
+.navbar-blue {
+    background-color: #252422;
+    border-bottom: 5px solid #eb5e28;
+}
+
+.nav-link {
+    color: #fffcf2!important;
+    border-radius: .3rem;
+}
+
+.nav-web .nav-link:hover {
+    background: #BD562D;
+    border-radius: .3rem;
+    color: #fffcf2 !important;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.nav-web .active {
+    background: #BD562D;
+    border-radius: .3rem;
+    color: #fffcf2 !important;
+}
+
+.btn-primary {
+    background-color: #eb5e28;
+    border-color: #eb5e28;
+}
+
+.btn-primary:hover {
+    background-color: #BD562D;
+    border-color: #BD562D;
+}
+
+.btn-primary-dark {
+    background-color: #252422;
+    border-color: #252422;
+    color: #fffcf2;
+}
+
+.btn-primary-dark:hover { 
+    color: #fffcf2;
+}
+
+.img-slider {
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.img-post {
+    height: 160px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.card-category {
+    background-color: #ccc5b9;
+}
+
+.footer-top {
+    background-color: #BD562D;
+    color: #fffcf2;
+    border-top: 5px solid #eb5e28;
+}
+
+.footer-bottom {
+    background-color: #252422;
+}
+
+.navbar-light .navbar-toggler {
+    color: #fffcf2 !important;
+    border-color: #fffcf2 !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.text-green {
+    color: #BD562D!important;
+}
+
+.carousel-custom {
+    z-index: 9;
+    background: #fffcf2;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    width: 22px;
+}
+
+.post-content p {
+    margin-bottom: 0px!important;
+    font-size: 18px;
+}
