@@ -15,7 +15,7 @@ export default function footer() {
               <img src="/images/PPLG.png" width="85" />
             </div>
             <p className="text-justify mt-3">
-              RPLSMART adalah portal berita digital yang berisi berita-berita yang membahas tentang jurusan RPL / PPLG SMKN 1 Banjar dan seluruh update kegiatannya. Portal ini dibuat untuk memudahkan siswa dan guru dalam mengakses informasi yang dibutuhkan.
+              RPLSMART adalah portal berita digital yang berisi berita-berita yang membahas tentang jurusan RPL / PPLG SMKN 1 Banjar dan seluruh update kegiatannya.
             </p>
           </div>
           <div className="col-md-4 mb-4 mt-3">
