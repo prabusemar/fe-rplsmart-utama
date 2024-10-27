@@ -85,7 +85,7 @@ export default function AparatursCreate() {
               <div className="card border-0 rounded shadow-sm border-top-success">
                 <div className="card-body">
                   <h6>
-                    <i className="fa fa-pencil"></i> Create Aparatur
+                    <i className="fa fa-pencil"></i> Create Staff
                   </h6>
                   <hr />
                   <form onSubmit={storeAparatur}>

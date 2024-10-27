@@ -110,7 +110,7 @@ export default function AparatursEdit() {
               <div className="card border-0 rounded shadow-sm border-top-success">
                 <div className="card-body">
                   <h6>
-                    <i className="fa fa-pencil"></i> Edit Aparatur
+                    <i className="fa fa-pencil"></i> Edit Staff
                   </h6>
                   <hr />
                   <form onSubmit={updateAparatur}>
