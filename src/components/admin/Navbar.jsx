@@ -97,7 +97,7 @@ export default function Navbar() {
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            style={{ color: "#fffcf2" }} // Dropdown toggle color
+            style={{ color: "#BD562D" }} // Dropdown toggle color
           >
             <i className="fas fa-user fa-fw"></i>
           </a>
@@ -105,12 +105,12 @@ export default function Navbar() {
             className="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
             style={{
-              backgroundColor: "#BD562D", // Dropdown background color
-              color: "#fffcf2", // Dropdown text color
+              backgroundColor: "#fffcf2", // Dropdown background color
+              color: "#BD562D", // Dropdown text color
             }}
           >
             <li>
-              <Link className="dropdown-item" onClick={logout} style={{ color: "#fffcf2" }}>
+              <Link className="dropdown-item" onClick={logout} style={{ color: "#BD562D" }}>
                 Logout
               </Link>
             </li>
