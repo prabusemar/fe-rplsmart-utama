@@ -239,10 +239,10 @@ export default function Sidebar() {
 
 
           {/* Roles Section */}
-          {(hasAnyPermission(['roles.index']) || 
+          {(hasAnyPermission(['roles.index']) ||
             hasAnyPermission(['users.index']) ||
             hasAnyPermission(['aparaturs.index'])
-          ) && 
+          ) &&
             (
               <>
                 <div className="sb-sidenav-menu-heading" style={{ color: "#ccc5b9" }}>
@@ -265,7 +265,7 @@ export default function Sidebar() {
                   <div className="sb-nav-link-icon">
                     <i className="fas fa-user"></i>
                   </div>
-                    User
+                  User
                   <div className="sb-sidenav-collapse-arrow">
                     <i className="fas fa-angle-down" style={{ color: "#fffcf2" }}></i>
                   </div>
@@ -273,10 +273,10 @@ export default function Sidebar() {
               </>
             )}
 
-            <div
+          <div
             className={
               "collapse " +
-              (["roles", "users",'aparaturs'].includes(activeRoute[2]) ? " show" : "")
+              (["roles", "users", 'aparaturs'].includes(activeRoute[2]) ? " show" : "")
             }
             id="collapseUsers"
             aria-labelledby="headingOne"
@@ -334,7 +334,7 @@ export default function Sidebar() {
           </div>
 
           {/* User Info */}
-          <div className="sb-sidenav-footer" style={{ backgroundColor: "#403d39", color: "#fffcf2" }}>
+          <div className="sb-sidenav-footer" style={{ backgroundColor: "#fff", color: "#000" }}>
             <div className="small">Logged in as:</div>
             {user.email}
           </div>
