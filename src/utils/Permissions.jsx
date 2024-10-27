@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 export default function hasAnyPermission(permissions) {
   //get permissions from cookies
   let allPermissions = JSON.parse(Cookies.get("permissions"));
+  console.log(allPermissions)
 
   let hasPermission = false;
 

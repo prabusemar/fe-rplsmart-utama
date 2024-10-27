@@ -193,7 +193,6 @@ export default function Sidebar() {
                 </a>
               </>
             )}
-
           <div
             className={
               "collapse " +
@@ -233,6 +232,102 @@ export default function Sidebar() {
                   }}
                 >
                   Sliders
+                </Link>
+              )}
+            </nav>
+          </div>
+
+
+          {/* Roles Section */}
+          {(hasAnyPermission(['roles.index']) || 
+            hasAnyPermission(['users.index']) ||
+            hasAnyPermission(['aparaturs.index'])
+          ) && 
+            (
+              <>
+                <div className="sb-sidenav-menu-heading" style={{ color: "#ccc5b9" }}>
+                  USER MANAGEMENT
+                </div>
+                <a
+                  className={
+                    "nav-link collapsed " +
+                    (["users", "roles", 'aparaturs'].includes(activeRoute[2]) ? " active-sidebar" : "")
+                  }
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseUsers"
+                  aria-expanded="false"
+                  aria-controls="collapseUsers"
+                  style={{
+                    color: ["users", "roles", 'aparaturs'].includes(activeRoute[2]) ? "#BD562D" : "#fffcf2",
+                  }}
+                >
+                  <div className="sb-nav-link-icon">
+                    <i className="fas fa-user"></i>
+                  </div>
+                    User
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i className="fas fa-angle-down" style={{ color: "#fffcf2" }}></i>
+                  </div>
+                </a>
+              </>
+            )}
+
+            <div
+            className={
+              "collapse " +
+              (["roles", "users",'aparaturs'].includes(activeRoute[2]) ? " show" : "")
+            }
+            id="collapseUsers"
+            aria-labelledby="headingOne"
+            data-bs-parent="#sidenavAccordion"
+          >
+            <nav className="sb-sidenav-menu-nested nav">
+              {hasAnyPermission(["users.index"]) && (
+                <Link
+                  className={
+                    activeRoute[2] === "users"
+                      ? "nav-link active-sidebar"
+                      : "nav-link"
+                  }
+                  to="/admin/users"
+                  style={{
+                    color: activeRoute[2] === "users" ? "#BD562D" : "#fffcf2",
+                  }}
+                >
+                  User
+                </Link>
+              )}
+
+              {hasAnyPermission(["roles.index"]) && (
+                <Link
+                  className={
+                    activeRoute[2] === "roles"
+                      ? "nav-link active-sidebar"
+                      : "nav-link"
+                  }
+                  to="/admin/roles"
+                  style={{
+                    color: activeRoute[2] === "roles" ? "#BD562D" : "#fffcf2",
+                  }}
+                >
+                  Role
+                </Link>
+              )}
+
+              {hasAnyPermission(["aparaturs.index"]) && (
+                <Link
+                  className={
+                    activeRoute[2] === "aparaturs"
+                      ? "nav-link active-sidebar"
+                      : "nav-link"
+                  }
+                  to="/admin/aparaturs"
+                  style={{
+                    color: activeRoute[2] === "aparaturs" ? "#BD562D" : "#fffcf2",
+                  }}
+                >
+                  Staff
                 </Link>
               )}
             </nav>
