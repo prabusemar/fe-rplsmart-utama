@@ -126,7 +126,7 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === ""
@@ -134,13 +134,13 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-home"></i> BERANDA
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "pages"
@@ -148,13 +148,13 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/pages"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-info-circle"></i> TENTANG JURUSAN
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "aparaturs"
@@ -162,13 +162,13 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/aparaturs"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-user-circle"></i> STAFF
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "posts"
@@ -176,13 +176,13 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/posts"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-book"></i> BERITA
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "products"
@@ -190,13 +190,13 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/products"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-shopping-bag"></i> PRODUK
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "photos"
@@ -204,7 +204,7 @@ export default function Navbar() {
                       : "nav-link text-uppercase"
                   }
                   to="/photos"
-                  style={{ color: "#fffcf2" }}
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
                   <i className="fa fa-images"></i> GALERI
                 </Link>
