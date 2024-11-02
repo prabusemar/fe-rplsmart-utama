@@ -208,7 +208,7 @@ export default function Navbar() {
                   to="/products"
                   style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
-                  <i className="fa fa-shopping-bag"></i> PRODUK
+                  <i className="fa fa-shopping-bag"></i> PRODUK DAN JASA
                 </Link>
               </li>
 
