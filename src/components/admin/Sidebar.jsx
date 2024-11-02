@@ -19,12 +19,41 @@ export default function Sidebar() {
 
   //get data user from cookies
   const user = JSON.parse(Cookies.get("user"));
+  // Dynamically determine sidebar height based on path
+  const determineNavHeight = () => {
+    switch (pathname) {
+      case "/admin/dashboard":
+      case "/admin/posts":
+      case "/admin/pages":
+      case "/admin/products":
+      case "/admin/users":
+      case "/admin/roles":
+        return "115vh";
+      case "/admin/categories":
+      case "/admin/aparaturs":
+        return "120vh";
+      case "/admin/photos":
+        return "195vh";
+      case "/admin/sliders":
+        return "150vh";
+      default:
+        return "100vh";
+
+    }
+  };
+
+  const navHeight = determineNavHeight();
 
   return (
     <nav
       className="sb-sidenav accordion sb-sidenav-dark"
       id="sidenavAccordion"
-      style={{ backgroundColor: "#252422", color: "#fffcf2" }} // Background and text color from palette
+      style={{
+        backgroundColor: "#252422",
+        color: "#fffcf2",
+        height: navHeight, // Applying dynamic height
+        marginTop: "-50px",
+      }}
     >
       <div className="sb-sidenav-menu">
         <div className="nav">
@@ -343,3 +372,4 @@ export default function Sidebar() {
     </nav>
   );
 }
+

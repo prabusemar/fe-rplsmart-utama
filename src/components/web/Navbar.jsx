@@ -183,6 +183,22 @@ export default function Navbar() {
               </li>
 
               <li className="nav-item ms-2 mt-2 mt-md-0">
+                <a
+                  className={
+                    activeRoute[1] === "blog"
+                      ? "nav-link active text-uppercase"
+                      : "nav-link text-uppercase"
+                  }
+                  href="https://rplsmart-blog.vercel.app/"
+                  style={{ color: "#fffcf2", padding: "8px 15px" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-solid fa-blog"></i> BLOG
+                </a>
+              </li>
+
+              <li className="nav-item ms-2 mt-2 mt-md-0">
                 <Link
                   className={
                     activeRoute[1] === "products"
@@ -216,3 +232,5 @@ export default function Navbar() {
     </>
   );
 }
+
+

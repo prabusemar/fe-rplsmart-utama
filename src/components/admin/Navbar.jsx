@@ -66,7 +66,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sb-topnav navbar navbar-expand navbar-dark shadow-sm fixed-top"
+      className="sb-topnav navbar navbar-expand navbar-dark shadow-sm"
       style={{
         backgroundColor: "#252422", // Navbar background color from palette
         borderTop: "5px solid #BD562D", // Border top color from palette
