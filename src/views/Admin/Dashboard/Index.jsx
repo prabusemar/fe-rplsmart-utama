@@ -105,7 +105,7 @@ export default function Dashboard() {
             <div className="col-xl-3 col-md-6">
               <div className="card mb-4 border-0 shadow-sm" style={{ backgroundColor: "#252422", color: "#fffcf2" }}>
                 <div className="card-body">
-                  <strong>{countAparaturs}</strong> STAFF
+                  <strong>{countAparaturs}</strong> STAF
                 </div>
                 <div className="card-footer d-flex align-items-center justify-content-between">
                   <Link

@@ -29,45 +29,61 @@ export default function WebPostsShow() {
 
   //fetch data post
   const fetchDetailDataPost = async () => {
-    //setLoadingPost "true"
     setLoadingPost(true);
 
-    //fetch data
     await Api.get(`/api/public/posts/${slug}`).then((response) => {
-      //assign response to state "posts"
       setPost(response.data.data);
-
-      //title page
       document.title = `${response.data.data.title} - RPLSMART`;
-
-      //setLoadingPost "false"
       setLoadingPost(false);
     });
   };
 
   //fetch data all posts
   const fetchAllPosts = async () => {
-    //setLoadingPosts "true"
     setLoadingPosts(true);
 
-    //fetch data
     await Api.get("/api/public/posts_home").then((response) => {
-      //assign response to state "posts"
       setPosts(response.data.data);
-
-      //setLoadingPosts "false"
       setLoadingPosts(false);
     });
   };
 
   //hook useEffect
   useEffect(() => {
-    //call method "fetchDetailDataPost"
     fetchDetailDataPost();
-
-    //call method "fetchAllPosts"
     fetchAllPosts();
   }, [slug]);
+
+  // CSS for cards
+  const cardStyle = {
+    display: "flex",
+    flexDirection: "row",
+    borderRadius: "0.5rem",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    overflow: "hidden",
+    height: "76px", // Adjust height for better appearance on mobile
+    marginBottom: "1rem",
+    "@media (max-width: 768px)": {
+      flexDirection: "row", // Ensure horizontal layout
+      height: "80px", // Smaller height for mobile
+    },
+  };
+
+  const imageStyle = {
+    width: "80px", // Fixed width for the image
+    height: "80px", // Ensure the image is square
+    objectFit: "cover",
+    borderRadius: "0.5rem 0 0 0.5rem",
+  };
+
+  const contentStyle = {
+    display: "flex",
+    alignItems: "center",
+    padding: "0.5rem",
+    flexGrow: 1,
+    overflow: "hidden",
+  };
+
 
   return (
     <LayoutWeb>
@@ -96,7 +112,7 @@ export default function WebPostsShow() {
                   <hr />
                   <img
                     src={post.image}
-                    class="rounded-3 w-100 mb-3"
+                    className="rounded-3 w-100 mb-3"
                     alt={post.title}
                   />
                   <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
@@ -116,28 +132,24 @@ export default function WebPostsShow() {
                 <Link
                   to={`/posts/${post.slug}`}
                   className="text-decoration-none"
+                  key={post.id}
                 >
-                  <div class="card mb-3 w-100 rounded-3 border-0 shadow-sm">
-                    <div class="row g-0 mb-0 pb-0">
-                      <div class="col-md-5">
-                        <img
-                          src={post.image}
-                          class="img-fluid h-100 w-100 object-fit-cover rounded-start"
-                          alt={post.title}
-                        />
-                      </div>
-                      <div class="col-md-7">
-                        <div class="card-body">
-                          <span class="card-title">
-                            {post.title.length > 30
-                              ? `${post.title.substring(0, 30)}...`
-                              : post.title}
-                          </span>
-                        </div>
-                      </div>
+                  <div className="card w-100 border-0" style={cardStyle}>
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      style={imageStyle}
+                    />
+                    <div className="card-body" style={contentStyle}>
+                      <span className="card-title">
+                        {post.title.length > 30
+                          ? `${post.title.substring(0, 30)}...`
+                          : post.title}
+                      </span>
                     </div>
                   </div>
                 </Link>
+
               ))
             )}
           </div>

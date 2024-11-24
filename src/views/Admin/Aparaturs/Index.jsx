@@ -30,7 +30,7 @@ import toast from "react-hot-toast";
 
 export default function AparatursIndex() {
   //title page
-  document.title = "Staff - RPLSMART";
+  document.title = " - RPLSMART";
 
   //define state "aparaturs"
   const [aparaturs, setAparaturs] = useState([]);

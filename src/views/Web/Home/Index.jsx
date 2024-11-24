@@ -21,6 +21,9 @@ import CardProduct from "../../../components/general/CardProduct";
 //import card post home
 import CardPostHome from "../../../components/general/CardPostHome";
 
+//import Link from react-router-dom
+import { Link } from "react-router-dom";
+
 export default function Home() {
   //title page
   document.title = "Selamat Datang di Website RPLSMART";
@@ -35,40 +38,27 @@ export default function Home() {
 
   //fetch data products
   const fetchDataProducts = async () => {
-    //setLoadingProducts "true"
     setLoadingProducts(true);
 
-    //fetch data
     await Api.get("/api/public/products_home").then((response) => {
-      //assign response to state "products"
       setProducts(response.data.data);
-
-      //setLoadingProducts "false"
       setLoadingProducts(false);
     });
   };
 
   //fetch data posts
   const fetchDataPosts = async () => {
-    //setLoadingPosts "true"
     setLoadingPosts(true);
 
-    //fetch data
     await Api.get("/api/public/posts_home").then((response) => {
-      //assign response to state "posts"
       setPosts(response.data.data);
-
-      //setLoadingPosts "false"
       setLoadingPosts(false);
     });
   };
 
   //hook useEffect
   useEffect(() => {
-    //call method "fetchDataProducts"
     fetchDataProducts();
-
-    //call method "fetchDataPosts"
     fetchDataPosts();
   }, []);
 
@@ -76,37 +66,8 @@ export default function Home() {
     <LayoutWeb>
       <Slider />
 
+      {/* Berita Terbaru */}
       <div className="container mt-5 mb-3">
-        <div className="row">
-          <div className="col-md-12 mb-3">
-            <div className="section-title">
-              <h4>
-                <i className="fa fa-shopping-bag"></i>
-                <strong style={{ color: "rgb(209 104 0)" }}> PRODUK DAN JASA </strong>
-                RPLSMART
-              </h4>
-            </div>
-          </div>
-          {loadingProducts ? (
-            <Loading />
-          ) : products.length > 0 ? (
-            products.map((product) => (
-              <CardProduct
-                key={product.id}
-                image={product.image}
-                title={product.title}
-                slug={product.slug}
-                price={product.price}
-                phone={product.phone}
-              />
-            ))
-          ) : (
-            <AlertDataEmpty />
-          )}
-        </div>
-      </div>
-
-      <div className="container mt-2 mb-4">
         <div className="row">
           <div className="col-md-12 mb-3">
             <div className="section-title">
@@ -134,6 +95,56 @@ export default function Home() {
           ) : (
             <AlertDataEmpty />
           )}
+        </div>
+        {/* Tombol LIHAT BERITA LAINNYA */}
+        <div className="row mt-3">
+          <div className="col-md-12 text-center">
+            <Link to="/posts" className="btn btn-primary">
+              Lihat Berita Lainnya
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Produk dan Jasa */}
+      <div className="container mt-2 mb-4">
+        <div className="row">
+          <div className="col-md-12 mb-3">
+            <div className="section-title">
+              <h4>
+                <i className="fa fa-shopping-bag"></i>
+                <strong style={{ color: "rgb(209 104 0)" }}>
+                  {" "}
+                  PRODUK DAN JASA{" "}
+                </strong>
+                RPLSMART
+              </h4>
+            </div>
+          </div>
+          {loadingProducts ? (
+            <Loading />
+          ) : products.length > 0 ? (
+            products.map((product) => (
+              <CardProduct
+                key={product.id}
+                image={product.image}
+                title={product.title}
+                slug={product.slug}
+                price={product.price}
+                phone={product.phone}
+              />
+            ))
+          ) : (
+            <AlertDataEmpty />
+          )}
+        </div>
+        {/* Tombol LIHAT PRODUK LAINNYA */}
+        <div className="row mt-3">
+          <div className="col-md-12 text-center">
+            <Link to="/products" className="btn btn-primary">
+              Lihat Produk Lainnya
+            </Link>
+          </div>
         </div>
       </div>
     </LayoutWeb>

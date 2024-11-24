@@ -164,7 +164,7 @@ export default function Navbar() {
                   to="/aparaturs"
                   style={{ color: "#fffcf2", padding: "8px 15px" }}
                 >
-                  <i className="fa fa-user-circle"></i> STAFF
+                  <i className="fa fa-user-circle"></i> STAF
                 </Link>
               </li>
 

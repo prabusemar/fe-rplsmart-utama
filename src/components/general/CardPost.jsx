@@ -7,13 +7,56 @@ import DateID from "../../utils/DateID";
 import { Link } from "react-router-dom";
 
 export default function CardPost(props) {
+  // CSS internal untuk kartu dan gambar
+  const cardStyle = {
+    height: "400px", // Tinggi kartu diperbesar
+    display: "flex",
+    flexDirection: "column", // Elemen diatur secara vertikal
+    justifyContent: "space-between",
+    overflow: "hidden", // Memastikan konten tidak keluar dari batas kartu
+    borderRadius: "0.5rem", // Rounded pada kartu
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Bayangan lembut
+  };
+
+  const imageStyle = {
+    height: "50%", // Gambar mengambil 50% dari tinggi kartu
+    width: "100%", // Gambar memenuhi lebar kartu
+    objectFit: "cover", // Memastikan gambar dipotong sesuai proporsi
+    borderTopLeftRadius: "0.5rem", // Rounded hanya pada sisi atas gambar
+    borderTopRightRadius: "0.5rem",
+  };
+
+  const bodyStyle = {
+    padding: "1rem", // Memberikan ruang dalam untuk konten
+    flexGrow: 1, // Konten teks mengambil sisa ruang
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  };
+
+  const footerStyle = {
+    padding: "0.5rem 1rem", // Spasi untuk footer
+    backgroundColor: "#f8f9fa", // Warna latar belakang untuk pembeda
+    borderTop: "1px solid #e9ecef",
+    textAlign: "right",
+  };
+
+  const textIconStyle = {
+    display: "flex",
+    alignItems: "center",
+    fontSize: "0.9rem", // Ukuran teks yang lebih kecil
+    gap: "0.5rem", // Jarak antar teks dan ikon
+  };
+
   return (
     <div className="col-md-4 mb-3" key={props.key}>
       <Link to={`/posts/${props.slug}`} className="text-decoration-none">
-        <div class="card mb-3 w-100 rounded-3 border-0 shadow-sm">
-          <img src={props.image} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">
+        <div className="card w-100 rounded-3 border-0" style={cardStyle}>
+          {/* Gambar Kartu */}
+          <img src={props.image} alt={props.title} style={imageStyle} />
+          {/* Konten Kartu */}
+          <div className="card-body" style={bodyStyle}>
+            <h5 className="card-title">
               {props.title.length > 50
                 ? `${props.title.substring(0, 50)}...`
                 : props.title}
@@ -34,8 +77,9 @@ export default function CardPost(props) {
               )}
             </p>
           </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">
+          {/* Footer Kartu */}
+          <div className="card-footer" style={footerStyle}>
+            <small className="text-body-secondary" style={textIconStyle}>
               <i className="fa fa-calendar"></i> {DateID(new Date(props.date))}
             </small>
           </div>

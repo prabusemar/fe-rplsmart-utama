@@ -17,7 +17,7 @@ import CardAparatur from "../../../components/general/CardAparatur";
 
 export default function Aparaturs() {
   //title page
-  document.title = "Staff - RPLSMART";
+  document.title = "Staf - RPLSMART";
 
   //init state
   const [aparaturs, setAparaturs] = useState([]);
@@ -50,7 +50,7 @@ export default function Aparaturs() {
         <div classname="row">
           <div className="col-md-12">
             <h5 className="text-uppercase">
-              <i className="fa fa-user-circle"></i> Staff RPLSMART
+              <i className="fa fa-user-circle"></i> Staf RPLSMART
             </h5>
             <hr />
           </div>

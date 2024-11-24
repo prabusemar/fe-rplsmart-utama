@@ -4,7 +4,7 @@ Portal berita ini dibuat untuk jurusan RPL SMKN 1 Banjar, yang berisi berita-ber
 
 ## Fitur
 
-* Staff: menampilkan informasi tentang staf jurusan RPL
+* Staf: menampilkan informasi tentang staf jurusan RPL
 * News: menampilkan berita-berita terbaru yang diterbitkan oleh staf jurusan RPL
 * Produk dan Jasa: menampilkan produk-produk dan jasa-jasa yang dihasilkan oleh siswa jurusan RPL
 * Gallery: menampilkan kumpulan-kumpulan gambar yang berhubungan dengan jurusan RPL

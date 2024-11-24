@@ -22,25 +22,17 @@ export default function WebProductsShow() {
 
   //fetch data product
   const fetchDetailDataProduct = async () => {
-    //setLoadingproduct "true"
     setLoadingProduct(true);
 
-    //fetch data
     await Api.get(`/api/public/products/${slug}`).then((response) => {
-      //assign response to state "product"
       setProduct(response.data.data);
-
-      //title page
       document.title = `${response.data.data.title} - RPLSMART`;
-
-      //setLoadingproduct "false"
       setLoadingProduct(false);
     });
   };
 
   //hook useEffect
   useEffect(() => {
-    //call method "fetchDetailDataProduct"
     fetchDetailDataProduct();
   }, []);
 
@@ -54,8 +46,22 @@ export default function WebProductsShow() {
             <div className="col-md-12">
               <div className="card border-0 shadow-sm rounded-3">
                 <div className="card-body post-content">
-                  <img src={product.image} class="rounded w-100 mb-3" />
-                  <table class="table">
+                  {/* Gambar Produk */}
+                  <div className="text-center mb-3">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="rounded"
+                      style={{
+                        maxWidth: "100%", // Gambar tidak lebih lebar dari container
+                        maxHeight: "500px", // Batasi tinggi maksimal gambar
+                        objectFit: "cover", // Jaga proporsi gambar
+                      }}
+                    />
+                  </div>
+
+                  {/* Detail Produk */}
+                  <table className="table">
                     <tbody>
                       <tr>
                         <th
@@ -80,7 +86,7 @@ export default function WebProductsShow() {
                           Deskripsi
                         </th>
                         <td>:</td>
-                        <td colspan="2">
+                        <td colSpan="2">
                           <p
                             dangerouslySetInnerHTML={{
                               __html: product.content,
@@ -105,8 +111,9 @@ export default function WebProductsShow() {
                             href={`https://api.whatsapp.com/send?phone=${product.phone}&text=Halo%20kak%2C%20saya%20ingin%20pesan%20%3A%20${product.title}`}
                             className="btn btn-primary"
                             target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            <i className="fa-brands fa-whatsapp"></i> Beli
+                            <i className="fa-brands fa-whatsapp"></i> Pesan
                             Sekarang
                           </a>
                         </td>

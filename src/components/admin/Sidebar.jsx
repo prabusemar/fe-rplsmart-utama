@@ -356,7 +356,7 @@ export default function Sidebar() {
                     color: activeRoute[2] === "aparaturs" ? "#BD562D" : "#fffcf2",
                   }}
                 >
-                  Staff
+                  Staf
                 </Link>
               )}
             </nav>

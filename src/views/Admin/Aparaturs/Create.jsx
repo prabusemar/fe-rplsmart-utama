@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 
 export default function AparatursCreate() {
   //title page
-  document.title = "Create Staff - RPLSMART";
+  document.title = "Create Staf - RPLSMART";
 
   //navigata
   const navigate = useNavigate();
@@ -85,7 +85,7 @@ export default function AparatursCreate() {
               <div className="card border-0 rounded shadow-sm border-top-success">
                 <div className="card-body">
                   <h6>
-                    <i className="fa fa-pencil"></i> Create Staff
+                    <i className="fa fa-pencil"></i> Create Staf
                   </h6>
                   <hr />
                   <form onSubmit={storeAparatur}>

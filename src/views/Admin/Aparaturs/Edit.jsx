@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 
 export default function AparatursEdit() {
   //title page
-  document.title = "Edit Staff - RPLSMART";
+  document.title = "Edit Staf - RPLSMART";
 
   //navigata
   const navigate = useNavigate();
@@ -110,7 +110,7 @@ export default function AparatursEdit() {
               <div className="card border-0 rounded shadow-sm border-top-success">
                 <div className="card-body">
                   <h6>
-                    <i className="fa fa-pencil"></i> Edit Staff
+                    <i className="fa fa-pencil"></i> Edit Staf
                   </h6>
                   <hr />
                   <form onSubmit={updateAparatur}>
